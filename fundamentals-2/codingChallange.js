@@ -75,4 +75,101 @@ let total = [];
 
 console.log(calcTip(bills, tips, total));
 
+
+Coding Challenge #3
+
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to
+implement the calculations! Remember: BMI = mass / height ** 2 = mass
+/ (height * height) (mass in kg and height in meter)
+Your tasks:
+1. For each of them, create an object with properties for their full name, mass, and
+height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same
+method on both objects). Store the BMI value to a property, and also return it
+from the method
+3. Log to the console who has the higher BMI, together with the full name and the
+respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
+tall.
+
+const persons = [
+  {
+    fullName: `mark`,
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+      return (this.BMI = this.mass / (this.height ** 2));
+    },
+  },
+  {
+    fullName: `john`,
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+      return (this.BMI = this.mass / (this.height ** 2));
+    },
+  },
+];
+console.log(persons[0].calcBMI(), persons[1].calcBMI());
+if (persons[0].BMI > persons[1].BMI) {
+  console.log(
+    `${persons[0].fullName} BMI ${persons[0].BMI} is higher than ${persons[1].fullName} ${persons[1].BMI}`
+  );
+} else if (persons[1].BMI > persons[0].BMI) {
+  console.log(
+    `${persons[1].fullName} BMI ${persons[1].BMI} is higher than ${persons[0].fullName} ${persons[0].BMI}`
+  );
+}
+
+
+Coding Challenge #4
+
+Let's improve Steven's tip calculator even more, this time using loops!
+Your tasks:
+1. Create an array 'bills' containing all 10 test bill values
+2. Create empty arrays for the tips and the totals ('tips' and 'totals')
+3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate
+tips and total values (bill + tip) for every bill value in the bills array. Use a for
+loop to perform the 10 calculations!
+Test data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
+Hints: Call ‘calcTip ‘in the loop and use the push method to add values to the
+tips and totals arrays �
+Bonus:
+4. Bonus: Write a function 'calcAverage' which takes an array called 'arr' as
+an argument. This function calculates the average of all numbers in the given
+array. This is a difficult challenge (we haven't done this before)! 
+
+
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let total = [];
+
+let calcTip = function (arrBills, arrEmpty, arrTotal) {
+  arrBills.forEach((element) => {
+    let scount = 0;
+    if (element >= 50 && element <= 300) {
+      scount = (element / 100) * 15;
+      arrEmpty.push(scount);
+    } else {
+      scount = (element / 100) * 20;
+      arrEmpty.push(scount);
+    }
+    arrTotal.push(element + scount);
+  });
+  return arrTotal;
+};
+
+let calcAverage = function (arr) {
+  let avgCount = 0;
+  for (i = 0; i < arr.length; i++) {
+    avgCount += arr[i];
+    if (i == arr.length - 1) {
+      avgCount = avgCount / arr.length;
+    }
+  }
+  return avgCount;
+};
+
+console.log(calcTip(bills, tips, total), `avg: ${calcAverage(total)}`);
+
 */
