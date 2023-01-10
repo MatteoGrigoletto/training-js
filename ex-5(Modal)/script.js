@@ -8,31 +8,46 @@ let first = document.querySelector('.first');
 let second = document.querySelector('.second');
 let third = document.querySelector('.third');
 
+let hidden = function (variable) {
+  variable.classList.add('hidden');
+};
+
+let removeHidden = function (variable) {
+  variable.classList.remove('hidden');
+};
+
 for (let i = 0; i < btnModal.length; i++) {
   btnModal[i].addEventListener('click', function () {
-    first.classList.remove('hidden');
-    second.classList.remove('hidden');
-    third.classList.remove('hidden');
+    removeHidden(first);
+    removeHidden(second);
+    removeHidden(third);
+    removeHidden(modal);
+    removeHidden(overlay);
 
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
     if (btnModal[i].innerHTML == `Show modal 1`) {
-      second.classList.add('hidden');
-      third.classList.add('hidden');
+      hidden(second);
+      hidden(third);
     } else if (btnModal[i].innerHTML == `Show modal 2`) {
-      first.classList.add('hidden');
-      third.classList.add('hidden');
+      hidden(first);
+      hidden(third);
     } else if (btnModal[i].innerHTML == `Show modal 3`) {
-      first.classList.add('hidden');
-      second.classList.add('hidden');
+      hidden(first);
+      hidden(second);
     }
   });
   btnCloseModal.addEventListener('click', function () {
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
+    hidden(modal);
+    hidden(overlay);
   });
   overlay.addEventListener('click', function () {
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
+    hidden(modal);
+    hidden(overlay);
   });
 }
+document.addEventListener('keydown', function (e) {
+  console.log(e);
+  if (e.key === 'Escape') {
+    hidden(modal);
+    hidden(overlay);
+  }
+});
