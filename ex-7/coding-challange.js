@@ -82,8 +82,12 @@ let [[gk, ...fieldPlayers]] = game.players;
 let allPlayers = [...game.players[0], ...game.players[1]];
 
 let players1Final = [...game.players[0], 'Thiago', 'Coutinho', 'Perisic'];
-
 console.log(game.printGoals(...game.scored));
+
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
 
 let win = game.odds.team1 > game.odds.team2 || `team 2 wins`;
 console.log(win);
