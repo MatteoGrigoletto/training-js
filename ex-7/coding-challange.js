@@ -78,10 +78,16 @@ const game = {
 };
 
 let [[gk, ...fieldPlayers]] = game.players;
+const {
+  players: [[...first], [...second]],
+} = game;
 
-let allPlayers = [...game.players[0], ...game.players[1]];
+let allPlayers = first + second;
+console.log(allPlayers);
 
-let players1Final = [...game.players[0], 'Thiago', 'Coutinho', 'Perisic'];
+let players1Final = [...first, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
+
 console.log(game.printGoals(...game.scored));
 
 const {
@@ -89,5 +95,7 @@ const {
 } = game;
 console.log(team1, draw, team2);
 
-let win = game.odds.team1 > game.odds.team2 || `team 2 wins`;
+let win = team1 > team2 || `team 2 wins`;
 console.log(win);
+
+console.log(first, second);
