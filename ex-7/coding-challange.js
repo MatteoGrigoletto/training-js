@@ -95,7 +95,7 @@ const {
 } = game;
 console.log(team1, draw, team2);
 
-let win = team1 > team2 || `team 2 wins`;
+let win = team1 > team2 || `team 1 wins`;
 console.log(win);
 
 console.log(first, second);
