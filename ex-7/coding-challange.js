@@ -202,18 +202,10 @@
 
 // coding interview
 
-// - Allora, abbiamo una funzione che accetta una stringa come argomento.
-
-// - La stringa e' in formato HTML e contiene  un numero indefinito di <div> che non sono chiusi correttamente.
-// (esempio: <div> <p> Ciao a tutti </p> <div> ).
-// All'interno dell'esempio manca la chiusura del secondo DIV cioe' la '/'  .
-
-// La funzione deve prendere la stringa sbagliata e restituirla nella versione corretta,
-// in questo caso:
-//                Versione sbagliata: <div> <p> Ciao a tutti </p> <div>
-//                Versione corretta:   <div> <p> Ciao a tutti </p> </div>
-
-// altro esempio:   <div><div> <div><div>   ----->  <div><div> </div></div>
+// Write a function that accepts a String as an argument.
+// The string is supposed to be HTMLAllCollection, but all the div Elements are missing their closing tags
+// The function is to find and clode all the divs in the string.
+// The string should return the entire corrected string.
 
 // const count = string => {
 //   let divCounter = 0;
