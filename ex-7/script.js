@@ -63,3 +63,18 @@
 // let c = (a ||= 30);
 // console.log(c);
 //
+
+//const mappa = new Map([
+//  ['correct', 3],
+//  [true, 'bravo'],
+//  [false, 'peccato'],
+//]);
+
+//let ciao = {
+//  name: ['matteo', 'antoni'],
+//  cognome: 'boh',
+//};
+
+//for (m of ciao.name) {
+//  console.log(m);
+//}
