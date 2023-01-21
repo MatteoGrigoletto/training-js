@@ -200,6 +200,8 @@
 
 // console.log(`=======================`);
 
+// coding interview
+
 // - Allora, abbiamo una funzione che accetta una stringa come argomento.
 
 // - La stringa e' in formato HTML e contiene  un numero indefinito di <div> che non sono chiusi correttamente.
