@@ -63,3 +63,42 @@
 // let c = (a ||= 30);
 // console.log(c);
 //
+
+// difference of array
+
+// let arr = ['ciao', `ciao`, 'miao', `bau`];
+
+// let oggetto = {
+//   name: `matteo`,
+//   cognome: `grigo`,
+// };
+
+// const nuovo = new Set(arr);
+// console.log(nuovo);
+
+// const nuovoOggetto = new Map(Object.entries(oggetto));
+
+// console.log(nuovoOggetto);
+
+// let a = 'ciao sono matteo tu come ti chiami? sono luca';
+
+// console.log(a.replaceAll(`sono`, `io`));
+
+// const maiuscola = function (name) {
+//   let s = name.split(' ');
+//   for (const n of s) {
+//     let final = n.replace(n[0], n[0].toUpperCase());
+//     console.log(final);
+//   }
+// };
+// maiuscola(`matteo antonio luigi`);
+
+// let change = function (number) {
+//   number = String(number);
+//   let cover = number.slice(number.length - 4).padStart(number.length, '*');
+//   console.log(cover);
+// };
+
+// change(123456789101222);
+
+// console.log(typeof (' ' + 2));
