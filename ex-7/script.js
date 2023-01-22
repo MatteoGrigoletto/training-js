@@ -64,7 +64,6 @@
 // console.log(c);
 //
 
-<<<<<<< HEAD
 // difference of array
 
 // let arr = ['ciao', `ciao`, 'miao', `bau`];
@@ -103,19 +102,3 @@
 // change(123456789101222);
 
 // console.log(typeof (' ' + 2));
-=======
-//const mappa = new Map([
-//  ['correct', 3],
-//  [true, 'bravo'],
-//  [false, 'peccato'],
-//]);
-
-//let ciao = {
-//  name: ['matteo', 'antoni'],
-//  cognome: 'boh',
-//};
-
-//for (m of ciao.name) {
-//  console.log(m);
-//}
->>>>>>> 811eccc252849409610f3e6881804713089c857f
