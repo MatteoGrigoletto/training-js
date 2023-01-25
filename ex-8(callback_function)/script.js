@@ -18,7 +18,7 @@
 // // const fullname = persona.fullname
 
 // // fullname.call()
-let arr = [1, 2, 3];
+// let arr = [1, 2, 3];
 // let ob = new Map(Object.entries(arr));
 // // let [key, value] = ob[1];
 // // console.log(ob);
@@ -32,9 +32,26 @@ let arr = [1, 2, 3];
 
 // console.log(newnumber);
 
-let uno = {
-  nome: `matteo`,
-  cognome: `grigo`,
-};
+// let uno = {
+//   nome: `matteo`,
+//   cognome: `grigo`,
+// };
 
-console.log(Object.keys(arr));
+// console.log(Object.keys(arr));
+
+// let btn = document.querySelector('.buy');
+
+// let score = function (score) {
+//   return function point(point) {
+//     console.log(
+//       `il tuo score attuale e' di ${score + point} e' aumentato di ${point}`
+//     );
+//   };
+// };
+
+// let points = Math.floor(Math.random() * 10) + 1;
+// // score(200)(points);
+// let final = score(300)(points);
+// // final(points);
+
+// btn.addEventListener('click', final);
