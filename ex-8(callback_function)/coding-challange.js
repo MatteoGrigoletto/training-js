@@ -15,7 +15,6 @@
 // 1: Python
 // 2: Rust
 // 3: C++
-// (Write option number)
 // 1.2. Based on the input number, update the 'answers' array property. For
 // example, if the option is 3, increase the value at position 3 of the array by
 // 1. Make sure to check if the input is a number and if the number makes
