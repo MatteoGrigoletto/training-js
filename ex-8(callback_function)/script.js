@@ -55,3 +55,36 @@
 // // final(points);
 
 // btn.addEventListener('click', final);
+// const howMuchILoveYou = function (n) {
+//   return [
+//     'not at all',
+//     'I love you',
+//     'a little',
+//     'a lot',
+//     'passionately',
+//     'madly',
+//   ][2];
+// };
+// console.log(howMuchILoveYou(8));
+
+// Some code
+//
+// let f;
+
+// const g = function () {
+//   const a = 23;
+
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
+// g();
+// f();
+
+// IL RISULTATO IN CONSOLE: 46
+
+// if (!ciao) {
+//   console.log('ciao');
+// }
+
+// var ciao = true;

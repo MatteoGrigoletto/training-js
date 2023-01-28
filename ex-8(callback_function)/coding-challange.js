@@ -28,20 +28,29 @@
 // 4. Run the 'displayResults' method at the end of each
 // 'registerNewAnswer' method call.
 
-let btn = document.querySelector('.poll');
-const poll = {
-  question: 'What is your favourite programming language?',
-  options: ['0: JavaScript', '1: Python', '2: Rust', '3 : C++'],
-  answers: new Array(4).fill(0),
-  registerNewAnswer: function () {
-    let info = prompt(`${this.question} ${this.options}`);
-    info > 3 || info < 0 ? null : this.answers[info]++;
+// let btn = document.querySelector('.poll');
+// const poll = {
+//   question: 'What is your favourite programming language?',
+//   options: ['0: JavaScript', '1: Python', '2: Rust', '3 : C++'],
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer: function () {
+//     let info = prompt(`${this.question} ${this.options}`);
+//     info > 3 || info < 0 ? null : this.answers[info]++;
 
-    this.displayResults(this.answers);
-  },
-  displayResults: function (type) {
-    console.log(type);
-  },
-};
+//     this.displayResults(this.answers);
+//   },
+//   displayResults: function (type) {
+//     console.log(type);
+//   },
+// };
 
-btn.addEventListener('click', poll.registerNewAnswer.bind(poll));
+// btn.addEventListener('click', poll.registerNewAnswer.bind(poll));
+let body = document.querySelector('body');
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+
+  body.addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
