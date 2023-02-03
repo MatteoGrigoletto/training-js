@@ -54,3 +54,10 @@
 // Test data:
 // § Data 1: [5, 2, 4, 1, 15, 8, 3]
 // § Data 2: [16, 6, 10, 5, 6, 1, 4]
+
+let calcAverageHumanAge = function(dogsArr){
+  let humanAge= dogsArr.map(age =>  age <= 2 ? age * 2 : 16 + age * 4).filter(elm => elm >= 18).reduce((calc,elm,i,arr) => calc + elm / arr.length ,0)
+  return Math.floor(humanAge)
+
+}
+console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])); 
