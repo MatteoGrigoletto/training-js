@@ -36,7 +36,7 @@
 // };
 // checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 
-
+///////////////////////////////////////////////////////////
 // Coding Challenge #2
 // Let's go back to Julia and Kate's study about dogs. This time, they want to convert
 // dog ages to human ages and calculate the average age of the dogs in their study.
@@ -55,9 +55,26 @@
 // § Data 1: [5, 2, 4, 1, 15, 8, 3]
 // § Data 2: [16, 6, 10, 5, 6, 1, 4]
 
-let calcAverageHumanAge = function(dogsArr){
-  let humanAge= dogsArr.map(age =>  age <= 2 ? age * 2 : 16 + age * 4).filter(elm => elm >= 18).reduce((calc,elm,i,arr) => calc + elm / arr.length ,0)
-  return Math.floor(humanAge)
+let calcAverageHumanAge = function (dogsArr) {
+  let humanAge = dogsArr
+    .map(age => (age <= 2 ? age * 2 : 16 + age * 4))
+    .filter(elm => elm >= 18)
+    .reduce((calc, elm, i, arr) => calc + elm / arr.length, 0);
+  return Math.floor(humanAge);
+};
+console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
 
-}
-console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])); 
+////////////////////////////////////////////////////////////////////
+// Coding Challenge #3
+// Rewrite the 'calcAverageHumanAge' function from Challenge #2, but this time
+// as an arrow function, and using chaining!
+
+let AverageHumanAge = dogsArr => {
+  let humanAge = dogsArr
+    .map(age => (age <= 2 ? age * 2 : 16 + age * 4))
+    .filter(elm => elm >= 18)
+    .reduce((calc, elm, i, arr) => calc + elm / arr.length, 0);
+  return Math.floor(humanAge);
+};
+
+console.log(AverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
