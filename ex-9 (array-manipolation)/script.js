@@ -38,3 +38,19 @@
 //   }
 // }
 // console.log(d);
+
+// let a = Array.from({ length: 100 }, () => Math.round(Math.random() * 6));
+// console.log(a);
+
+// let b = a.reduce(
+//   (cal, elm) => {
+//     elm > 0 ? (cal.piu += elm) : (cal.meno += elm);
+//     return cal;
+//   },
+//   {
+//     piu: 0,
+//     meno: 0,
+//   }
+// );
+
+// console.log(b);

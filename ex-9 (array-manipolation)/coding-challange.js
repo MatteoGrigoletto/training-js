@@ -55,26 +55,119 @@
 // § Data 1: [5, 2, 4, 1, 15, 8, 3]
 // § Data 2: [16, 6, 10, 5, 6, 1, 4]
 
-let calcAverageHumanAge = function (dogsArr) {
-  let humanAge = dogsArr
-    .map(age => (age <= 2 ? age * 2 : 16 + age * 4))
-    .filter(elm => elm >= 18)
-    .reduce((calc, elm, i, arr) => calc + elm / arr.length, 0);
-  return Math.floor(humanAge);
-};
-console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
+// let calcAverageHumanAge = function (dogsArr) {
+//   let humanAge = dogsArr
+//     .map(age => (age <= 2 ? age * 2 : 16 + age * 4))
+//     .filter(elm => elm >= 18)
+//     .reduce((calc, elm, i, arr) => calc + elm / arr.length, 0);
+//   return Math.floor(humanAge);
+// };
+// console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
 
 ////////////////////////////////////////////////////////////////////
 // Coding Challenge #3
 // Rewrite the 'calcAverageHumanAge' function from Challenge #2, but this time
 // as an arrow function, and using chaining!
 
-let AverageHumanAge = dogsArr => {
-  let humanAge = dogsArr
-    .map(age => (age <= 2 ? age * 2 : 16 + age * 4))
-    .filter(elm => elm >= 18)
-    .reduce((calc, elm, i, arr) => calc + elm / arr.length, 0);
-  return Math.floor(humanAge);
-};
+// let AverageHumanAge = dogsArr => {
+//   let humanAge = dogsArr
+//     .map(age => (age <= 2 ? age * 2 : 16 + age * 4))
+//     .filter(elm => elm >= 18)
+//     .reduce((calc, elm, i, arr) => calc + elm / arr.length, 0);
+//   return Math.floor(humanAge);
+// };
 
-console.log(AverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
+// console.log(AverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
+
+///////////////////////////////////////////
+// Coding Challenge #4
+// Julia and Kate are still studying dogs, and this time they are studying if dogs are
+// eating too much or too little.
+// Eating too much means the dog's current food portion is larger than the
+// recommended portion, and eating too little is the opposite.
+// Eating an okay amount means the dog's current food portion is within a range 10%
+// above and 10% below the recommended portion (see hint).
+// Your tasks:
+// 1. Loop over the 'dogs' array containing dog objects, and for each dog, calculate
+// the recommended food portion and add it to the object as a new property. Do
+// not create a new array, simply loop over the array. Forumla:
+// recommendedFood = weight ** 0.75 * 28. (The result is in grams of
+// food, and the weight needs to be in kg)
+// 2. Find Sarah's dog and log to the console whether it's eating too much or too
+// little.
+// 3. Create an array containing all owners of dogs who eat too much
+// ('ownersEatTooMuch') and an array with all owners of dogs who eat too little
+// ('ownersEatTooLittle').
+// 4. Log a string to the console for each array created in 3., like this: "Matilda and
+// Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat
+// too little!"
+// 5. Log to the console whether there is any dog eating exactly the amount of food
+// that is recommended (just true or false)
+// 6. Log to the console whether there is any dog eating an okay amount of food
+// (just true or false)
+// 7. Create an array containing the dogs that are eating an okay amount of food (try
+// to reuse the condition used in 6.)
+// 8. Create a shallow copy of the 'dogs' array and sort it by recommended food
+// portion in an ascending order
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// ex 1
+
+dogs.forEach(dog => (dog.racPortion = Math.floor(dog.weight ** 0.75 * 28)));
+// console.log(dogs);
+
+// ex 2
+let dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+// console.log(dogSarah.curFood > dogSarah.racPortion ? 'too much' : 'too little');
+
+// ex 3
+let ownersEatTooMuch = dogs.filter(
+  food => food.racPortion * 1.1 < food.curFood
+);
+let ownersEatTooLittle = dogs.filter(
+  food => food.racPortion * 0.9 > food.curFood
+);
+// console.log(ownersEatTooMuch, ownersEatTooLittle);
+
+// ex 4
+console.log(ownersEatTooLittle);
+// let x = Array.from(ownersEatTooMuch, x => x.owners);
+// console.log(x.flat());
+let muchfood =
+  ownersEatTooMuch.flatMap(ow => ow.owners).join(', ') + 's dogs eat too much!';
+let littleFood =
+  ownersEatTooLittle.flatMap(ow => ow.owners).join(', ') +
+  's dogs eat too little!';
+console.log(littleFood);
+console.log(muchfood);
+
+// ex 5
+let perfectPortion = dogs.some(dog => dog.curFood === dog.racPortion);
+console.log(perfectPortion);
+
+// ex 6
+let goodPortion = dogs.some(
+  food =>
+    food.racPortion * 1.1 > food.curFood && food.racPortion * 0.9 < food.curFood
+);
+console.log(goodPortion);
+
+// ex 7
+let ArrayGoodPortion = dogs.find(
+  food =>
+    food.racPortion * 1.1 > food.curFood && food.racPortion * 0.9 < food.curFood
+);
+console.log([ArrayGoodPortion]);
+
+// ex 8
+let dogs1 = [...dogs]
+  .map(elm => elm.curFood)
+  .sort((a, b) => a - b)
+  .join(' ');
+console.log(dogs1);
