@@ -44,8 +44,8 @@ sliderMove(0);
 
 // eventi per cambiare slide tramite bottoni
 
-btnRight.addEventListener('click', nextSlide);
-btnLeft.addEventListener('click', prevSlide);
+// btnRight.addEventListener('click', nextSlide);
+// btnLeft.addEventListener('click', prevSlide);
 
 // funzione per la creazione dei pallini corrispettivi alle slide
 
@@ -85,3 +85,7 @@ window.addEventListener('keyup', function (e) {
     prevSlide();
   }
 });
+
+setInterval(function () {
+  nextSlide();
+}, 3000);
